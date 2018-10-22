@@ -37,7 +37,7 @@ export default class ViewPager extends Component {
         onStartShouldSetPanResponder: () => true,
         onMoveShouldSetPanResponder: () => true,
         onPanResponderGrant: () => this._setScrollState(SCROLL_STATE.dragging),
-        onPanResponderMove: () => null,
+        onPanResponderMove: () => props.onPanResponderMove && props.onPanResponderMove(),
         onPanResponderRelease: () => this._setScrollState(SCROLL_STATE.settling) && props.onPanResponderRelease && props.onPanResponderRelease(),
         onPanResponderTerminate: () => null,
         onPanResponderTerminationRequest: (evt, gestureState) => true
